@@ -1,98 +1,64 @@
 import { heroAvatars } from "@/models/hero";
 import Image from "next/image";
 
-const desktopAvatarClassName =
-	"absolute h-42 w-42 rounded-full border-[3px] border-background object-cover shadow-(--shadow-card)";
-
-const desktopAvatarLayout = [
-	"left-[2%] top-[96px]",
-	"left-[18%] top-[50px]",
-	"left-[34%] top-[16px]",
-	"left-[50%] top-[96px]",
-	"left-[66%] top-[48px]",
-	"left-[82%] top-[16px]",
+const avatarHeightOffsets = [
+	"translate-y-4",
+	"translate-y-1",
+	"-translate-y-2",
+	"translate-y-2",
+	"-translate-y-1",
+	"-translate-y-2",
 ];
 
 export function Hero() {
 	const heroDisplayAvatars = heroAvatars.slice(0, 6);
 
 	return (
-		<section
-			id="home"
-			className="hero-section relative mx-auto w-full max-w-7xl px-4 pb-12 pt-10 sm:px-6 md:pt-14 lg:px-10"
-		>
-			<div className="hero-copy mx-auto max-w-5xl text-center">
-				<h1 className="hero-heading font-gerbil text-foreground text-center">
-					<span className="hero-line hero-line-underlined">The thinkers and</span>
-					<span className="hero-line">
-						doers were <span className="hero-highlight-pink">changing</span>
-					</span>
-					<span className="hero-line">
-						the <span className="hero-highlight-green">status</span> Quo with
-					</span>
-				</h1>
+		<section id="home">
+			<div className="hero-shell relative overflow-hidden pb-28 pt-14 text-white sm:pt-16">
+					<div className="hero-shell-grain absolute inset-0" aria-hidden="true" />
+					<div className="hero-shell-glow hero-shell-glow-left" aria-hidden="true" />
+					<div className="hero-shell-glow hero-shell-glow-right" aria-hidden="true" />
 
-				<p className="mx-auto mt-5 max-w-2xl text-center text-[0.95rem] leading-[1.72] text-(--secondary-text) sm:text-[1rem]">
-					We are a team of strategists, designers, communicators, researchers.
-					Together, we believe that progress only happens when you refuse to
-					play things safe.
-				</p>
-			</div>
+					<div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-10 lg:px-14">
+						<div className="mx-auto max-w-4xl text-center">
+							<h1 className="font-gerbil text-balance text-[clamp(2.05rem,5.95vw,4.9rem)] font-medium leading-[1.05] tracking-[-0.02em] text-white">
+							The innovators and
+							<br />
+							makers <span className="hero-cyan-glow">paving</span>
+							<br />
+							the <span className="hero-amber-glow">future</span> with
+							<br />
+							clarity.
+							</h1>
 
-			<div className="hero-avatars-shell mt-12 md:mt-16">
-				<div className="hidden md:block">
-					<div className="hero-avatars-frame relative mx-auto h-72 w-full max-w-7xl overflow-visible lg:h-80">
+							<p className="mx-auto mt-7 max-w-3xl text-[0.9rem] leading-[1.6] text-[#d5dde8] sm:text-[0.98rem] sm:leading-[1.68]">
+								An integrated ecosystem of architects, developers, and visionaries,
+								dedicated to a singular focus: to unlock hidden potential and
+								realize exceptional value.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div className="relative z-20 -mt-16 mx-auto flex max-w-6xl justify-center px-2 sm:-mt-18 sm:px-4 lg:px-10">
+					<ul className="flex items-end">
 						{heroDisplayAvatars.map((avatar, index) => (
-							<Image
+							<li
 								key={avatar.id}
-								src={avatar.image}
-								alt={avatar.name}
-								width={168}
-								height={168}
-								className={`${desktopAvatarClassName} ${desktopAvatarLayout[index]}`}
-							/>
+								className={`relative -ml-4 h-20 w-20 overflow-hidden rounded-full border-4 border-[#f5f5f5] shadow-[0_18px_28px_rgba(0,0,0,0.28)] first:ml-0 sm:-ml-5 sm:h-24 sm:w-24 md:h-28 md:w-28 ${avatarHeightOffsets[index]}`}
+							>
+								<Image
+									src={avatar.image}
+									alt={avatar.name}
+									fill
+									className="object-cover"
+									sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
+								/>
+							</li>
 						))}
-					</div>
+					</ul>
 				</div>
-
-				<div className="relative md:hidden">
-					<div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-linear-to-r from-background to-transparent" />
-					<div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-linear-to-l from-background to-transparent" />
-
-					<div className="hero-mobile-slider no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:-mx-6 sm:px-6">
-						{heroDisplayAvatars.map((avatar, index) => {
-							const shape = index % 3 === 0 ? "rounded-[1.55rem]" : "rounded-full";
-							const tone =
-								index % 2 === 0
-									? "from-[#f8d585]/70 via-[#f9a8d4]/35 to-[#cde7d8]/50"
-									: "from-[#cde7d8]/75 via-[#f7f7f7]/45 to-[#f4b43a]/35";
-
-							return (
-								<article
-									key={`mobile-${avatar.id}`}
-									className="relative min-w-[58%] snap-center sm:min-w-[40%]"
-								>
-									<div className={`rounded-3xl bg-linear-to-br p-1.5 shadow-[0_10px_20px_rgba(17,17,17,0.12)] ${tone}`}>
-										<div className={`relative aspect-square overflow-hidden border-2 border-background bg-white ${shape}`}>
-											<Image
-												src={avatar.image}
-												alt={avatar.name}
-												fill
-												className="object-cover"
-												sizes="(max-width: 640px) 58vw, 40vw"
-											/>
-										</div>
-									</div>
-								</article>
-							);
-						})}
-					</div>
-
-					{/* <p className="mt-3 text-center text-[0.72rem] uppercase tracking-[0.22em] text-(--muted-text)">
-						Swipe left or right
-					</p> */}
-				</div>
-			</div>
 		</section>
 	);
 }
