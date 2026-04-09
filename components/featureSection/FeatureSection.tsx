@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function NextSection() {
+export function FeatureSection() {
   return (
     <section className="relative mx-auto w-full max-w-7xl px-4 pb-20 pt-6 sm:px-6 lg:px-10">
       <div className="pointer-events-none absolute inset-x-0 top-[34%] hidden lg:block">
@@ -44,7 +44,7 @@ export function NextSection() {
             </a>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[220px] sm:max-w-107.5">
+          <div className="relative mx-auto w-full max-w-220px sm:max-w-107.5">
             <span
               aria-hidden
               className="absolute -right-4 top-8 h-26 w-26 rotate-12 bg-[#ff7373]"
@@ -62,7 +62,7 @@ export function NextSection() {
         </article>
 
         <article className="grid items-center gap-10 lg:grid-cols-[0.95fr_1fr] lg:gap-12">
-          <div className="relative mx-auto w-full max-w-[220px] lg:max-w-107.5 lg:order-1">
+          <div className="relative mx-auto w-full max-w-220px lg:max-w-107.5 lg:order-1">
             <span
               aria-hidden
               className="absolute -left-4 top-6 h-28 w-28 -rotate-30 bg-[#ff7373]"

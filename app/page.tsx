@@ -1,5 +1,5 @@
 import { Hero } from "@/components/hero/Hero";
-import { NextSection } from "@/components/nextSection/NextSection";
+import { FeatureSection } from "@/components/featureSection/FeatureSection";
 import { OfferSection } from "@/components/offerSection/OfferSection";
 import { TestimonialSection } from "@/components/testimonialSection/TestimonialSection";
 import { FooterSection } from "@/components/footerSection/FooterSection";
@@ -12,7 +12,7 @@ export default function Home() {
 
       <main className="flex-1 pb-0">
         <Hero />
-        <NextSection />
+        <FeatureSection />
         <OfferSection />
         <TestimonialSection />
         <FooterSection />

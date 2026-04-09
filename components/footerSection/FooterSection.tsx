@@ -14,9 +14,9 @@ const footerColumns = [
   {
     heading: "Terms & Policies",
     items: [
-      "1498w Fluton ste, STE",
-      "2D Chcigo, IL 63867.",
-      "(123) 456789000",
+      "Lalpur",
+      "Ranchi, Jharkhand 834001",
+      "1234567890",
       "info@elementum.com",
     ],
   },

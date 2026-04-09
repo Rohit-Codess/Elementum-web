@@ -59,7 +59,7 @@ export function Hero() {
 					<div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-linear-to-r from-background to-transparent" />
 					<div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-linear-to-l from-background to-transparent" />
 
-					<div className="hero-mobile-slider no-scrollbar -mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-2 sm:-mx-6 sm:px-6">
+					<div className="hero-mobile-slider no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:-mx-6 sm:px-6">
 						{heroDisplayAvatars.map((avatar, index) => {
 							const shape = index % 3 === 0 ? "rounded-[1.55rem]" : "rounded-full";
 							const tone =
@@ -70,16 +70,16 @@ export function Hero() {
 							return (
 								<article
 									key={`mobile-${avatar.id}`}
-									className="relative min-w-[72%] snap-center sm:min-w-[48%]"
+									className="relative min-w-[58%] snap-center sm:min-w-[40%]"
 								>
-									<div className={`rounded-3xl bg-linear-to-br p-2 shadow-[0_14px_30px_rgba(17,17,17,0.14)] ${tone}`}>
+									<div className={`rounded-3xl bg-linear-to-br p-1.5 shadow-[0_10px_20px_rgba(17,17,17,0.12)] ${tone}`}>
 										<div className={`relative aspect-square overflow-hidden border-2 border-background bg-white ${shape}`}>
 											<Image
 												src={avatar.image}
 												alt={avatar.name}
 												fill
 												className="object-cover"
-												sizes="(max-width: 640px) 72vw, 48vw"
+												sizes="(max-width: 640px) 58vw, 40vw"
 											/>
 										</div>
 									</div>
@@ -88,9 +88,9 @@ export function Hero() {
 						})}
 					</div>
 
-					<p className="mt-3 text-center text-[0.72rem] uppercase tracking-[0.22em] text-(--muted-text)">
+					{/* <p className="mt-3 text-center text-[0.72rem] uppercase tracking-[0.22em] text-(--muted-text)">
 						Swipe left or right
-					</p>
+					</p> */}
 				</div>
 			</div>
 		</section>

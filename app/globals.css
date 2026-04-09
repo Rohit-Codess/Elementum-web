@@ -32,9 +32,10 @@
 
 @font-face {
   font-family: "Gerbil";
-  src: local("Gerbil"), local("Gerbil Regular");
+  src: url("/gerbil.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
 }
 
 @theme inline {

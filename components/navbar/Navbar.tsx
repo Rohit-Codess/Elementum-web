@@ -8,7 +8,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="relative z-40 w-full px-6 pt-6 sm:px-8 lg:px-14">
+    <header className="relative z-40 w-full px-6 sm:px-8 lg:px-14">
       <div className="mx-auto w-full max-w-7xl">
         <nav aria-label="Main navigation" className="flex items-center justify-between">
           <a href="#home" className="inline-flex items-center" aria-label="Elementum home">
@@ -17,7 +17,7 @@ export function Navbar() {
               alt="Elementum"
               width={220}
               height={56}
-              className="h-10 w-auto sm:h-18 lg:h-20"
+              className="h-18 w-auto sm:h-18 lg:h-20"
               priority
             />
           </a>
@@ -77,7 +77,7 @@ export function Navbar() {
 
         <aside
           id="mobile-nav-drawer"
-          className={`absolute right-0 top-0 flex h-full w-[85%] max-w-85 flex-col border-l border-(--border-light) bg-background p-6 shadow-[-12px_0_24px_rgba(0,0,0,0.08)] transition-transform duration-300 ${
+          className={`absolute right-0 top-0 flex h-full w-[85%] max-w-85 flex-col border-l border-(--border-light) bg-(--card-background) p-6 shadow-[-12px_0_24px_rgba(0,0,0,0.08)] transition-transform duration-300 ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -87,7 +87,7 @@ export function Navbar() {
               alt="Elementum"
               width={170}
               height={44}
-              className="h-18 w-auto"
+              className="h-24 w-auto"
             />
             <button
               type="button"
@@ -102,13 +102,13 @@ export function Navbar() {
             </button>
           </div>
 
-          <ul className="grid gap-1 rounded-2xl border border-(--border-light) bg-(--card-background) p-2 shadow-(--shadow-card)">
+          <ul className="mt-3 grid gap-1">
             {primaryNavigation.map((item) => (
               <li key={item.label}>
                 <a
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="block rounded-xl px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-(--accent-green)"
+                  className="block rounded-xl px-4 py-3 text-sm font-medium text-foreground transition-colors hover:text-(--accent-purple)"
                 >
                   {item.label}
                 </a>
