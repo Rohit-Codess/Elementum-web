@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Elementum Website
 
-## Getting Started
+A modern marketing website for Elementum, built to be clean, mobile-friendly, and easy to update.
 
-First, run the development server:
+## What This Website Includes
+
+- Responsive layout for desktop, tablet, and mobile.
+- Mobile sidebar navigation (opens from the side).
+- Hero section with team images and touch-friendly mobile behavior.
+- Content sections for story, services, testimonials, and newsletter.
+- Branded footer with company links and contact information.
+
+## Main Page Flow
+
+The homepage is organized in this order:
+
+1. Navbar
+2. Hero section
+3. Next section (story/content blocks)
+4. Offer section (service highlights)
+5. Testimonial section
+6. Footer and newsletter
+
+## Easy Content Update Guide
+
+Use the files below when content needs to be changed:
+
+- Navigation menu items: `models/navigation.ts`
+- Hero avatar images: `models/hero.ts`
+- Homepage section order: `app/page.tsx`
+- Hero copy/layout: `components/hero/Hero.tsx`
+- Story/next section content: `components/nextSection/NextSection.tsx`
+- Offer section content: `components/offerSection/OfferSection.tsx`
+- Testimonial content: `components/testimonialSection/TestimonialSection.tsx`
+- Footer links and contact details: `components/footerSection/FooterSection.tsx`
+- Global colors, spacing, typography: `app/globals.css`
+
+## How To Run Locally
+
+1. Install dependencies
+
+```bash
+npm install
+```
+
+2. Start development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open in browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`http://localhost:3000`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Build For Production
 
-## Learn More
+```bash
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes For Client Handover
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- All sections are component-based, so updates can be done section by section.
+- Text, links, and image sources are easy to locate in the files listed above.
+- The design is already optimized for mobile and tablet behavior.
