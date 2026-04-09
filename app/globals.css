@@ -49,7 +49,7 @@
 body {
   background: var(--background);
   color: var(--primary-text);
-  font-family: var(--font-body), "Segoe UI", sans-serif;
+  font-family: "Gerbil", var(--font-display), "Trebuchet MS", sans-serif;
 }
 
 .font-gerbil {

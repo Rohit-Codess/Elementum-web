@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { primaryNavigation } from "@/models/navigation";
 
 export function Navbar() {
@@ -11,7 +12,7 @@ export function Navbar() {
     <header className="relative z-40 w-full px-6 sm:px-8 lg:px-14">
       <div className="mx-auto w-full max-w-7xl">
         <nav aria-label="Main navigation" className="flex items-center justify-between">
-          <a href="#home" className="inline-flex items-center" aria-label="Elementum home">
+          <Link href="/" className="inline-flex items-center" aria-label="Elementum home">
             <Image
               src="/logo.png"
               alt="Elementum"
@@ -20,17 +21,18 @@ export function Navbar() {
               className="h-18 w-auto sm:h-18 lg:h-20"
               priority
             />
-          </a>
+          </Link>
 
           <ul className="hidden items-center gap-10 md:flex">
             {primaryNavigation.map((item) => (
               <li key={item.label}>
-                <a
+                <Link
                   href={item.href}
+                  aria-label={item.ariaLabel}
                   className="inline-flex items-center justify-center text-sm font-medium text-foreground transition-colors duration-200 hover:text-(--accent-purple) lg:text-[0.95rem]"
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -105,13 +107,14 @@ export function Navbar() {
           <ul className="mt-3 grid gap-1">
             {primaryNavigation.map((item) => (
               <li key={item.label}>
-                <a
+                <Link
                   href={item.href}
+                  aria-label={item.ariaLabel}
                   onClick={() => setIsOpen(false)}
                   className="block rounded-xl px-4 py-3 text-sm font-medium text-foreground transition-colors hover:text-(--accent-purple)"
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
