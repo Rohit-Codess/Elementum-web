@@ -75,15 +75,15 @@ export function FooterSection() {
         <hr className="mt-12 border-[#7f8f86] sm:mt-16" />
 
         <div className="grid gap-8 pb-10 pt-8 sm:grid-cols-2 sm:gap-10 sm:pb-14 sm:pt-10 lg:grid-cols-4">
-          {footerColumns.map((column) => (
-            <div key={column.heading}>
+          {footerColumns.map((column, columnIndex) => (
+            <div key={`${column.heading}-${columnIndex}`}>
               <h3 className="font-gerbil text-[1.2rem] leading-none tracking-[0.01em] text-foreground sm:text-[1.5rem]">
                 {column.heading}
               </h3>
 
               <ul className="mt-3 grid gap-2 sm:mt-5 sm:gap-3">
-                {column.items.map((item) => (
-                  <li key={item} className="text-[0.75rem] leading-[1.35] text-[#2f3d35] sm:text-sm sm:leading-[1.45] sm:text-[0.95rem]">
+                {column.items.map((item, itemIndex) => (
+                  <li key={`${column.heading}-${columnIndex}-${itemIndex}`} className="text-[0.75rem] leading-[1.35] text-[#2f3d35] sm:text-sm sm:leading-[1.45] sm:text-[0.95rem]">
                     {item}
                   </li>
                 ))}
